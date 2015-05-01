@@ -21,7 +21,7 @@
 #import "KPLog.h"
 #import "KPViewControllerProtocols.h"
 #import "KPPlayerConfig.h"
-
+#import "KPlayerController.h"
 
 
 
@@ -29,6 +29,8 @@
 @protocol KPViewControllerDelegate;
 
 @interface KPViewController : UIViewController
+
+@property (nonatomic, readonly, strong) KPlayerController *playerController;
 
 
 
