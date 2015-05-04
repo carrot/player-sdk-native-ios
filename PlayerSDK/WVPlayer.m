@@ -27,7 +27,7 @@ static NSString *kPortalKey = @"kaltura";
 
 
 + (void)DRMSource:(NSString *)src key:(NSString *)key completion:(void (^)(NSString *))completion {
-    WV_Initialize(WVCallback, @{WVDRMServerKey: key, WVPortalKey: kPortalKey});
+    WV_Initialize(KWVCallback, @{WVDRMServerKey: key, WVPortalKey: kPortalKey});
     [self performSelector:@selector(fetchDRMParams:) withObject:@[src, completion] afterDelay:0.1];
 }
 
@@ -43,7 +43,7 @@ static NSString *kPortalKey = @"kaltura";
 }
 
 
-WViOsApiStatus WVCallback( WViOsApiEvent event, NSDictionary *attributes ) {
+WViOsApiStatus KWVCallback( WViOsApiEvent event, NSDictionary *attributes ) {
     KPLogTrace(@"Enter");
     KPLogInfo( @"callback %d %@\n", event, NSStringFromWViOsApiEvent( event ) );
     
